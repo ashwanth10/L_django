@@ -2,9 +2,9 @@ from django.urls import path
 from posts.views import *
 from django.conf.urls import url
 urlpatterns = [
-	url('^$', post_list),
-	url('^create/$', post_create),
-	url('^detail/$', post_detail),
-	url('^update/$', post_update),
-	url('^delete/$', post_delete),
+	url(r'^$', post_list),
+	url(r'^create/$', post_create),
+	url(r'^(?P<id>\d+)/$', post_detail),
+	url(r'^update/$', post_update),
+	url(r'^delete/$', post_delete),
 ]
