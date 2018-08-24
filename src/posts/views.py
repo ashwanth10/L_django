@@ -16,8 +16,6 @@ def post_create(request):
 		messages.success(request, "created form successfully")
 		# success showing the post has been created
 		return HttpResponseRedirect(instance.get_absolute_url())
-	else:
-		messages.error(request, "couldn't create a message")
 		
 	context = {
 		"form" : form,
@@ -39,7 +37,7 @@ def post_list(request):
 		"title" : "List auth",
 		"objectset" : queryset
 	}
-	return render(request, "index.html", context)
+	return render(request, "post_list.html", context)
 
 def post_update(request, id=None):
 	instance = get_object_or_404(Post, id=id)
